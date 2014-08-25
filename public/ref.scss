@@ -1,0 +1,28 @@
+body {
+	background-color: #000000;
+	color: #ffffff;
+	text-align: center; 
+}
+h4 {
+	margin-bottom: 10px;
+	color: #fedd51;
+}
+.clear {
+	clear: both;
+}
+
+button {
+	margin-right: 5px;
+	margin-bottom: 20px;
+	height: 40px;
+	padding: 0 30px;
+}
+button.primary {
+	font-weight: bold;
+}
+button.reset {
+	background-color: red;
+}
+.extras {
+	margin-top: 80px;
+}
