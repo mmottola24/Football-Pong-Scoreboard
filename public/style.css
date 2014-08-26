@@ -5,6 +5,7 @@
 body {
   background-color: #222222;
   height: 100%;
+  width: 100%;
   font-family: Arial; }
 
 #container {
@@ -97,16 +98,34 @@ body {
       margin: 0 auto;
       float: none;
       border: 0; }
-      .second-row .box .number span {
-        padding: 0 10px;
-        border: 2px solid #838383; }
     .second-row .box .label {
       clear: both;
       margin-top: 5px;
       margin-bottom: 20px; }
+
+.box span {
+  padding: 0 10px;
+  border: 2px solid #838383; }
 
 #home-score h4 {
   color: #cc0000; }
 
 #away-score h4 {
   color: blue; }
+
+@media (max-width: 1100px) {
+  body {
+    min-width: 768px;
+    font-size: .5em;
+    padding: 0;
+    margin: 0; }
+    body #container {
+      width: 100%;
+      margin: 0;
+      border: 0; }
+    body #timer {
+      padding: 2px; }
+      body #timer .inner-box {
+        padding: 0; }
+    body .first-row {
+      margin-top: 0; } }
