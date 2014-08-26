@@ -12,7 +12,7 @@ $(document).ready(function() {
         var value = $('#home-team-timeouts').html();
         if (data.direction == 'up') {
             value = parseInt(value) + 1;
-        } else if (value != 1) {
+        } else if (value != 0) {
             value = parseInt(value) - 1;
         }
         $('#home-team-timeouts').html(value);
@@ -21,7 +21,7 @@ $(document).ready(function() {
         var value = $('#away-team-timeouts').html();
         if (data.direction == 'up') {
             value = parseInt(value) + 1;
-        } else if (value != 1) {
+        } else if (value != 0) {
             value = parseInt(value) - 1;
         }
         $('#away-team-timeouts').html(value);
@@ -30,7 +30,8 @@ $(document).ready(function() {
     socket.on('change-quarter', function (data) {
         var value = $('#quarter-number').html();
         if (data.direction == 'up') {
-            value = parseInt(value) + 1;
+            if (value != 4) 
+                value = parseInt(value) + 1;
         } else if (value != 1) {
             value = parseInt(value) - 1;
         }
@@ -44,7 +45,10 @@ $(document).ready(function() {
         } else {
             var value = $('#down-counter').html();
             if (data.direction == 'up') {
-                value = parseInt(value) + 1;
+                if (value == 4)
+                    value = 1;
+                else
+                    value = parseInt(value) + 1;
             } else if (value != 1) {
                 value = parseInt(value) - 1;
             }
@@ -173,4 +177,51 @@ $(document).ready(function() {
             }
         }
     };
+
+    // Events for interacting directly with ScoreBoard
+    // So you do not need a ref
+
+    // Points
+    $('#away-team-score').click(function() {
+        var score = parseInt($(this).html()) + 1;
+        socket.emit('update-away-team-score', { score: score });
+    });
+    $('#home-team-score').click(function() {
+        var score = parseInt($(this).html()) + 1;
+        socket.emit('update-home-team-score', { score: score });
+    });
+
+    // Timeouts
+    $('#away-timeouts-label').click(function() {
+        socket.emit('update-away-team-timeouts', { direction: 'down' });
+    });
+    $('#home-timeouts-label').click(function() {
+        socket.emit('update-home-team-timeouts', { direction: 'down' });
+    });
+
+    // Quarter
+    $('#quarter').click(function(){
+        socket.emit('update-quarter', { direction: 'up' });
+    });
+
+    // Down
+    $('#down').click(function(){
+        socket.emit('update-down', { direction: 'up' });
+    });
+
+    // Play Clock
+    $('#playclock').click(function(){
+        socket.emit('reset-playclock', { mode: 'play' });
+    });
+    $('#playclock').dblclick(function(){
+        socket.emit('reset-playclock', { mode: 'restart', value: 20 });
+    });
+
+    // Game Clock
+    $('#timer').click(function() {
+        socket.emit('update-gameclock', { mode: 'play' });
+    });
+    $('#timer').dblclick(function(){
+        socket.emit('update-gameclock', { mode: 'restart', min: 5, sec: '00' });
+    });
 });

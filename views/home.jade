@@ -11,14 +11,14 @@ html
         #container
             .first-row
                 #away-score.box
-                    h4.label= "Creepers"
+                    h4.label= "Away"
                     .number
                         span#away-team-score.score= "0"
                     .clear
                     .timeouts
                         .number
                             span#away-team-timeouts= "3"
-                        .label= "TOL" 
+                        .label#away-timeouts-label= "TOL" 
                     
                 #timer.box
                     .inner-box
@@ -27,14 +27,14 @@ html
                         .number#gameclock-sec= "00"
 
                 #home-score.box
-                    h4.label= "Vendetta"
+                    h4.label= "Home"
                     .number
                         span#home-team-score.score= "0"
                     .clear
                     .timeouts
                         .number
                             span#home-team-timeouts= "3"
-                        .label= "TOL"
+                        .label#home-timeouts-label= "TOL"
 
             .clear
 
