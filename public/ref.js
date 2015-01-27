@@ -2,8 +2,6 @@
 $(document).ready(function() {
 	var socket = io.connect('http://' + window.location.host);
 
-	socket.emit('test');
-
 	var $homeTeamScore = $('#home-team-score'),
 		$awayTeamScore = $('#away-team-score');
 

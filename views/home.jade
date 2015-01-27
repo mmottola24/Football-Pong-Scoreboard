@@ -11,47 +11,38 @@ html
         #container
             .first-row
                 #away-score.box
-                    h4.label= "Away"
-                    .number
-                        span#away-team-score.score= "0"
-                    .clear
-                    .timeouts
-                        .number
-                            span#away-team-timeouts= "3"
-                        .label#away-timeouts-label= "TOL" 
-                    
-                #timer.box
-                    .inner-box
-                        .number#gameclock-min= "5"
-                        span= ":"
-                        .number#gameclock-sec= "00"
+                    div
+                        div
+                            h4.label= "Away"
+                            .number
+                                span#away-team-score.score= "0"
+                        .controls
+                            #away-team-update-score-up.up-arrow
+                            #away-team-update-score-down.down-arrow
 
+            
                 #home-score.box
-                    h4.label= "Home"
-                    .number
-                        span#home-team-score.score= "0"
-                    .clear
-                    .timeouts
-                        .number
-                            span#home-team-timeouts= "3"
-                        .label#home-timeouts-label= "TOL"
-
-            .clear
+                    div
+                        div
+                            h4.label= "Home"
+                            .number
+                                span#home-team-score.score= "0"
+                        .controls
+                            #home-team-update-score-up.up-arrow
+                            #home-team-update-score-down.down-arrow
 
             .second-row
-                #quarter.box
-                    .number
-                        span#quarter-number= "1"
-                    .label= "QUARTER"
+                #away-score
+                  h4= "Away Team Points"
+                  button#away-field-goal= "FG"
+                  button#away-touchdown= "TD"
+                  button#away-pat= "PAT"
+                  button#away-reset.reset= "reset"
 
-                #down.box
-                    .number
-                        span#down-counter= "1"
-                    .label= "DOWN"
+                #home-score
+                  h4= "Home Team Points"
 
-                #playclock.box
-                    .number
-                        span#playclock-timer= "20"
-                    .label= "PLAY"
-
-                .clear
+                  button#home-field-goal= "FG"
+                  button#home-touchdown= "TD"
+                  button#home-pat= "PAT"
+                  button#home-reset.reset= "reset"

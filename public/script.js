@@ -1,5 +1,61 @@
 $(document).ready(function() {
     var socket = io.connect('http://' + window.location.host);
+
+    var $homeTeamScore = $('#home-team-score'),
+        $awayTeamScore = $('#away-team-score');
+
+
+    $('#away-team-update-score-up').click(function() {
+        var score = parseInt($awayTeamScore.html());
+        $awayTeamScore.html(score + 1);
+    });
+
+    $('#away-team-update-score-down').click(function() {
+        var score = parseInt($awayTeamScore.html());
+        if (score != 0) {
+            $awayTeamScore.html(score - 1);
+        }
+    });
+
+    $('#home-team-update-score-up').click(function() {
+        var score = parseInt($homeTeamScore.html());
+        $homeTeamScore.html(score + 1);
+    });
+
+    $('#home-team-update-score-down').click(function() {
+        var score = parseInt($homeTeamScore.html());
+        if (score != 0) {
+            $homeTeamScore.html(score - 1);
+        }
+    });
+
+    $('#home-field-goal').click(function() {
+        $homeTeamScore.html(parseInt($homeTeamScore.html()) + 3);
+    });
+    $('#home-touchdown').click(function() {
+        $homeTeamScore.html(parseInt($homeTeamScore.html()) + 6);
+    });
+    $('#home-pat').click(function() {
+        $homeTeamScore.html(parseInt($homeTeamScore.html()) + 1);
+    });
+    $('#home-reset').click(function() {
+        $homeTeamScore.html(0);
+    });
+
+    $('#away-field-goal').click(function() {
+        $awayTeamScore.html(parseInt($awayTeamScore.html()) + 3);
+    });
+    $('#away-touchdown').click(function() {
+        $awayTeamScore.html(parseInt($awayTeamScore.html()) + 6);
+    });
+    $('#away-pat').click(function() {
+        $awayTeamScore.html(parseInt($awayTeamScore.html()) + 1);
+    });
+    $('#away-reset').click(function() {
+        $awayTeamScore.html(0);
+    });
+
+
     
     socket.on('change-home-team-score', function (data) {
         $('#home-team-score').html(data.score);
