@@ -12,7 +12,7 @@ html
             .first-row
                 #away-score.box
                     div
-                        div
+                        div.score-output
                             h4.label= "Away"
                             .number
                                 span#away-team-score.score= "0"
@@ -23,7 +23,7 @@ html
             
                 #home-score.box
                     div
-                        div
+                        div.score-output
                             h4.label= "Home"
                             .number
                                 span#home-team-score.score= "0"
@@ -32,17 +32,16 @@ html
                             #home-team-update-score-down.down-arrow
 
             .second-row
-                #away-score
-                  h4= "Away Team Points"
-                  button#away-field-goal= "FG"
-                  button#away-touchdown= "TD"
-                  button#away-pat= "PAT"
+                .score-controls
+                  h4.away= "Away Team Points"
+                  button#away-field-goal= "+ FG"
+                  button#away-touchdown= "+ TD"
+                  button#away-pat= "+ PAT"
                   button#away-reset.reset= "reset"
 
-                #home-score
-                  h4= "Home Team Points"
-
-                  button#home-field-goal= "FG"
-                  button#home-touchdown= "TD"
-                  button#home-pat= "PAT"
+                .score-controls
+                  h4.home= "Home Team Points"
+                  button#home-field-goal= "+ FG"
+                  button#home-touchdown= "+ TD"
+                  button#home-pat= "+ PAT"
                   button#home-reset.reset= "reset"
