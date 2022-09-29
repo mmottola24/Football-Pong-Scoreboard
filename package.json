@@ -8,6 +8,7 @@
   "dependencies": {
     "cheerio": "^0.22.0",
     "express": "latest",
+    "body-parser": "*",
     "pug": "latest",
     "socket.io": "latest"
   },
