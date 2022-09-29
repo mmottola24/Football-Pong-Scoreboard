@@ -1,0 +1,57 @@
+doctype html
+html
+    head
+        title= "Football Pong Scoreboard"
+        meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+        script(src='/socket.io/socket.io.js')
+        script(src='/jquery.min.js')
+        script(src='/script.js')
+        link(href='/style.css' rel="stylesheet" type="text/css")
+    body
+        #container
+            .first-row
+                #away-score.box
+                    h4.label= "Away"
+                    .number
+                        span#away-team-score.score= "0"
+                    .clear
+                    .timeouts
+                        .number
+                            span#away-team-timeouts= "3"
+                        .label#away-timeouts-label= "TOL" 
+                    
+                #timer.box
+                    .inner-box
+                        .number#gameclock-min= "5"
+                        span= ":"
+                        .number#gameclock-sec= "00"
+
+                #home-score.box
+                    h4.label= "Home"
+                    .number
+                        span#home-team-score.score= "0"
+                    .clear
+                    .timeouts
+                        .number
+                            span#home-team-timeouts= "3"
+                        .label#home-timeouts-label= "TOL"
+
+            .clear
+
+            .second-row
+                #quarter.box
+                    .number
+                        span#quarter-number= "1"
+                    .label= "QUARTER"
+
+                #down.box
+                    .number
+                        span#down-counter= "1"
+                    .label= "DOWN"
+
+                #playclock.box
+                    .number
+                        span#playclock-timer= "20"
+                    .label= "PLAY"
+
+                .clear

@@ -30,7 +30,7 @@ Homemade Field:
 
 ### Notes
 
-I had a lot of fun building this scoreboard. It was run to work with NodeJS and really loved building a real time app using socket.io. 
+I had a lot of fun building this scoreboard. It was fun to work with NodeJS and really loved building a real time app using socket.io. 
 
 ## License
 

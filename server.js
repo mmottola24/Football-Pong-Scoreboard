@@ -1,12 +1,14 @@
 var express = require('express')
   , port = process.env.PORT || 3000
   , app = express()
-  , jade = require('jade')
-  , server = require('http').createServer(app)
-  , io = require('socket.io').listen(server);
+  , pug = require('pug')
+  , http = require('http')
+  , server = http.createServer(app)
+  , { Server } = require("socket.io")
+  , io = new Server(server);
 
 app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 app.set("view options", { layout: false });
 
 app.use(express.static(__dirname + '/public'));

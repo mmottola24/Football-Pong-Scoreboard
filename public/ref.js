@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
-	var socket = io.connect('http://' + window.location.host);
+	var protocol = (window.location.hostname === 'localhost') ? 'http://' : 'https://';
+	var socket = io.connect(protocol + window.location.host);
 
 	var $homeTeamScore = $('#home-team-score'),
 		$awayTeamScore = $('#away-team-score');

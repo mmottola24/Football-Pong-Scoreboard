@@ -11,8 +11,9 @@ html
       h3= "Football Pong Scoreboard Controller"
 
       #container
+
         #play-clock
-          h4= "Play Clock" 
+          h4= "Play Clock"
           button#playclock-play.primary= "play/pause"
           button#playclock-restart.reset= "restart"
 
@@ -42,24 +43,24 @@ html
 
         #quarter
           h4= "Quarter"
-          button#quarter-up= "+1"
           button#quarter-down= "-1"
+          button#quarter-up= "+1"
 
         .timeouts
           h4= "Timeouts"
           h5= "Away Team"
-          button#away-team-timeouts-up= "+1"
           button#away-team-timeouts-down= "-1"
+          button#away-team-timeouts-up= "+1"
 
           h5= "Home Team"
-          button#home-team-timeouts-up= "+1"
           button#home-team-timeouts-down= "-1"
+          button#home-team-timeouts-up= "+1"
 
         .extras
           h4= "Other options:"
-          h5= "Game Clock"          
-          button#gameclock-add-min= "+1 min"
+          h5= "Game Clock"
           button#gameclock-minus-min= "-1 min"
+          button#gameclock-add-min= "+1 min"
           button#gameclock-reset.reset= "reset"
 
           h5= "Away Team Score"
