@@ -102,4 +102,25 @@ $(document).ready(function() {
 		socket.emit('update-gameclock', { mode: 'subtract-min'});
 	});
 
+	$('#reset-all').click(function() {
+		$('#playclock-restart').trigger('click');
+		$('#gameclock-reset').trigger('click');
+		$('#down-reset').trigger('click');
+		$('#away-reset').trigger('click');
+		$('#home-reset').trigger('click');
+
+		$('#quarter-down').trigger('click');
+		$('#quarter-down').trigger('click');
+		$('#quarter-down').trigger('click');
+		$('#quarter-down').trigger('click');
+
+		$('#away-team-timeouts-up').trigger('click');
+		$('#away-team-timeouts-up').trigger('click');
+		$('#away-team-timeouts-up').trigger('click');
+		$('#home-team-timeouts-up').trigger('click');
+		$('#home-team-timeouts-up').trigger('click');
+		$('#home-team-timeouts-up').trigger('click');
+
+		$('#playclock-play').trigger('click');
+	});
 });

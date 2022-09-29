@@ -16,6 +16,9 @@ $(document).ready(function() {
         } else if (value != 0) {
             value = parseInt(value) - 1;
         }
+        if (value > 3) {
+            value = 3;
+        }
         $('#home-team-timeouts').html(value);
     });
     socket.on('change-away-team-timeouts', function (data) {
@@ -24,6 +27,9 @@ $(document).ready(function() {
             value = parseInt(value) + 1;
         } else if (value != 0) {
             value = parseInt(value) - 1;
+        }
+        if (value > 3) {
+            value = 3;
         }
         $('#away-team-timeouts').html(value);
     });
